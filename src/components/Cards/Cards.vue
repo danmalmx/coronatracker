@@ -1,5 +1,9 @@
 <template>
-  <v-card
+  <div class="container">
+    <Card :data = data />
+  </div>
+
+  <!-- <v-card
     class="mx-auto"
     max-width="400"
   >
@@ -34,23 +38,32 @@
         Explore
       </v-btn>
     </v-card-actions>
-  </v-card>
+  </v-card> -->
+
 </template>
 
 <script>
-// import {Card, CardContent, Typography, Grid} from '@vuetify'
+import Card from './Card'
 export default {
     props: ['data'],
     data() {
         return {
-            title: 'Card',
         }
     },
+
+    components: {
+      Card
+    }
 
 }
 
 </script>
 
 <style lang="scss" scoped>
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 </style>

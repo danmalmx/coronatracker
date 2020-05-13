@@ -3,8 +3,15 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
+import moment from 'moment';
 
-Vue.config.productionTip = false
+//FILTERS
+Vue.filter('date', () => {
+  moment.locale('en-gb');
+  return moment().calendar()
+});
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
